@@ -10,6 +10,7 @@ import (
 	"github.com/sirupsen/logrus"
 	"github.com/spf13/viper"
 	"io"
+	"io/ioutil"
 	"mcquay.me/trash"
 )
 
@@ -65,6 +66,22 @@ func getData(c echo.Context) error {
 	}
 	return c.Stream(http.StatusOK, "application/octet-stream", lr)
 }
+
 func postData(c echo.Context) error {
+	file, err := c.FormFile("data")
+	if err != nil {
+		return c.String(http.StatusBadRequest, fmt.Sprintf("Missing `data` form field: %s", err))
+	}
+
+	src, err := file.Open()
+	if err != nil {
+		return c.String(http.StatusInternalServerError, fmt.Sprintf("file.Open(): %s", err))
+	}
+	defer src.Close()
+
+	if _, err = io.Copy(ioutil.Discard, src); err != nil {
+		return c.String(http.StatusInternalServerError, fmt.Sprintf("io.Copy(): %s", err))
+	}
+
 	return c.String(http.StatusOK, "ok")
 }
