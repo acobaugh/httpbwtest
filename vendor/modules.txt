@@ -1,3 +1,5 @@
+# github.com/dustin/go-humanize v1.0.0
+github.com/dustin/go-humanize
 # github.com/fsnotify/fsnotify v1.4.7
 github.com/fsnotify/fsnotify
 # github.com/hashicorp/hcl v1.0.0
@@ -59,3 +61,5 @@ golang.org/x/text/transform
 golang.org/x/text/unicode/norm
 # gopkg.in/yaml.v2 v2.2.2
 gopkg.in/yaml.v2
+# mcquay.me/trash v0.0.0-20171228063128-8bd4b0a0b15e
+mcquay.me/trash
