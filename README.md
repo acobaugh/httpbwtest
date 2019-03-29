@@ -14,7 +14,7 @@ Optionally, the `PORT` environment variable can be specified to change the port 
 
 ## API
 
-### GET /:pattern?size=<human-readable-bytes>
+### GET /:pattern?size=N
 
 Sends `size` bytes of data.
 
