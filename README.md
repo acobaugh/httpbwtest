@@ -1,5 +1,7 @@
 # HTTP bandwidth tester
 
+[![Docker Repository on Quay.io](https://quay.io/repository/acobaugh/httpbwtest/status "Docker Repository on Quay.io")](https://quay.io/repository/acobaugh/httpbwtest)
+
 This is a simple and efficient web server to either send or retrieve arbitrary amounts of data. Useful for testing in cases where something like iperf is unfeasible or insufficient (eg proxy servers).
 
 ## Installation
@@ -9,6 +11,7 @@ This is a simple and efficient web server to either send or retrieve arbitrary a
 ## Usage
 
 ```./httpbwtest```
+```docker run -p 8080:8080 quay.io/acobaugh/httpbwtest```
 
 Optionally, the `PORT` environment variable can be specified to change the port the server listens on. Default is `8080`.
 
