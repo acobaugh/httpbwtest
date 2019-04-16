@@ -11,6 +11,9 @@ This is a simple and efficient web server to either send or retrieve arbitrary a
 ## Usage
 
 ```./httpbwtest```
+
+or
+
 ```docker run -p 8080:8080 quay.io/acobaugh/httpbwtest```
 
 Optionally, the `PORT` environment variable can be specified to change the port the server listens on. Default is `8080`.
